@@ -1,0 +1,15 @@
+
+{
+    "shell_cmd": "wsl g++ -g -ggdb3  -Wall -Wno-variadic-macros -Wno-unused-result -Wextra -fsanitize=float-divide-by-zero -pedantic -std=c++20 -O2 -Wshadow -Wformat=2 -Wfloat-equal -Wconversion -Wlogical-op -Wshift-overflow=2 -Wduplicated-cond -Wcast-qual -Wcast-align -fsanitize=address -fsanitize=undefined -fno-sanitize-recover -fstack-protector -fsanitize=bounds -fsanitize=pointer-overflow -fsanitize=vla-bound -D LOCAL -std=c++20 `wslpath '${file}'` -o `wslpath '${file_path}'`/${file_base_name}; timeout -s SIGKILL 3 `wslpath '${file_path}'`/${file_base_name} ",
+    "file_regex": "^(..[^:]*):([0-9]+):?([0-9]+)?:? (.*)$",
+    "working_dir": "${file_path}",
+    "selector": "source.c++",
+
+    "variants":
+    [
+        {
+            "name": "Run",
+            "shell_cmd": "wsl g++ -g -ggdb3 -Wall -Wno-variadic-macros -Wno-unused-result -Wextra -fsanitize=float-divide-by-zero -pedantic -std=c++20 -O2 -Wshadow -Wformat=2 -Wfloat-equal -Wconversion -Wlogical-op -Wshift-overflow=2 -Wduplicated-cond -Wcast-qual -Wcast-align -fsanitize=address -fsanitize=undefined -fno-sanitize-recover -fstack-protector -fsanitize=bounds -fsanitize=pointer-overflow -fsanitize=vla-bound -D LOCAL -std=c++20 `wslpath '${file}'` -o `wslpath '${file_path}'`/${file_base_name}; timeout -s SIGKILL 3 `wslpath '${file_path}'`/${file_base_name} "
+        }
+    ]
+}

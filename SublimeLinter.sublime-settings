@@ -1,0 +1,12 @@
+// SublimeLinter Settings - User
+{
+	// "debug": true,
+	
+	"linters": {
+		  "gcc": {
+            "executable": "g++",
+            "args": ["-Wall", "-Wextra", "-Werror"],
+            "selector": "source.c, source.c++"
+        }
+	}
+}
