@@ -1,0 +1,13 @@
+{
+    "explorer.confirmDragAndDrop": false,
+    "haskell.manageHLS": "GHCup",
+    "files.autoSave": "afterDelay",
+    "[cpp]": {
+        "editor.defaultFormatter": "xaver.clang-format"
+    },
+    "[c]": {
+        "editor.defaultFormatter": "xaver.clang-format"
+    },
+    "clang-format.executable": "/usr/local/bin/clang-format",
+    "editor.formatOnSave": true
+}
