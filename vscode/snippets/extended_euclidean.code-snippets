@@ -1,0 +1,21 @@
+{
+  "Extended Euclidean Algorithm": {
+    "scope": "cpp",
+    "prefix": "extended euclidean",
+    "body": [
+      "int extended_euclidean(int a, int b, int *x, int *y)",
+      "{",
+      "\tif (a == 0) {",
+      "\t\t*x = 0; *y = 1;",
+      "\t\treturn b;",
+      "\t}",
+      "\tint x1, y1;",
+      "\tint gcd = extended_euclidean(b % a, a, &x1, &y1);",
+      "\t*x = y1 - (b / a) * x1;",
+      "\t*y = x1;",
+      "\treturn gcd;",
+      "}"
+    ],
+    "description": "Extended Euclidean Algorithm"
+  }
+}

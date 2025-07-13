@@ -1,0 +1,30 @@
+{
+  "Floyd Cycle": {
+    "scope": "cpp",
+    "prefix": "floyd cycles hanging",
+    "body": [
+      "//cycled finding in floyd grapg [hanging tree like structure]",
+      "\t\tvi brr(n), vis(n);",
+      "\t\tint ans = 0;",
+      "\t\tfor (int i = 0; i < n; i++) {",
+      "\t\t\tif (!vis[i]) {",
+      "\t\t\t\tint j = i;",
+      "\t\t\t\tint c = 0;",
+      "\t\t\t\tsi s;",
+      "\t\t\t\twhile (!vis[j]) {",
+      "\t\t\t\t\ts.insert(j);",
+      "\t\t\t\t\tvis[j] = 1;",
+      "\t\t\t\t\tbrr[j] = c;",
+      "\t\t\t\t\tj = arr[j];",
+      "\t\t\t\t\tc++;",
+      "\t\t\t\t}",
+      "\t\t\t\twd(c, j, brr[j], i);",
+      "\t\t\t\tif (s.find(j) != s.end())",
+      "\t\t\t\t\tans += c - brr[j];",
+      "",
+      "\t\t\t}",
+      "\t\t}"
+    ],
+    "description": "Floyd Cycle"
+  }
+}

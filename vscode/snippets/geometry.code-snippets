@@ -1,0 +1,32 @@
+{
+  "Geometry": {
+    "scope": "cpp",
+    "prefix": "geometry",
+    "body": [
+      "// Given three collinear points p, q, r, the function checks if point q lies on line segment 'pr'",
+      "bool onsegment(pair<int, int> p, pair<int, int> q, pair<int, int> r)",
+      "{",
+      "\tif (q.first <= max(p.second, r.first) && q.first >= min(p.first, r.first) &&",
+      "\t        q.second <= max(p.second, r.second) && q.second >= min(p.second, r.second))",
+      "\t\treturn true;",
+      "",
+      "\treturn false;",
+      "}",
+      "",
+      "// To find orientation of ordered triplet (p, q, r).  // The function returns following values",
+      "// 0 --> p, q and r are collinear",
+      "// 1 --> Clockwise",
+      "// 2 --> Counterclockwise",
+      "int orientation(pair<int, int> p, pair<int, int> q, pair<int, int> r)",
+      "{",
+      "\tint val = (q.second - p.second) * (r.first - q.first) -",
+      "\t          (q.first - p.first) * (r.second - q.second);",
+      "",
+      "\tif (val == 0) return 0;  // collinear",
+      "",
+      "\treturn (val > 0) ? 1 : 2; // clock or counterclock wise",
+      "}"
+    ],
+    "description": "Geometry"
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "MSB LSB Bit": {
+    "scope": "cpp",
+    "prefix": "msb lsb bit",
+    "body": [
+      "//note: lsb_set==lsb && lsb_unset==lsbu",
+      "//just take log2(lsb_set(x)) if want just pos. //x!=0",
+      "int log2_floor(long long i) {",
+      "\treturn i ? __builtin_clzll(1ll) - __builtin_clzll(i) : -1;",
+      "}",
+      "#define lsb(x) (x&-x)",
+      "#define lsbu(x) (x&(x+1))",
+      "#define msb(x) __lg(x)",
+      "#define msbu(x)"
+    ],
+    "description": "MSB LSB Bit"
+  }
+}

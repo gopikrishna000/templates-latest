@@ -1,0 +1,15 @@
+{
+  "Divisors": {
+    "scope": "cpp",
+    "prefix": "divisors",
+    "body": [
+      "vector<vector<int>> divisors(N + 1);",
+      "\tfor (int i = 1; i <= N; i++) {",
+      "\t\tfor (int j = i; j <= N; j+=i) {",
+      "\t\t\tdivisors[j].push_back(i);",
+      "\t\t}",
+      "\t}"
+    ],
+    "description": "Divisors"
+  }
+}

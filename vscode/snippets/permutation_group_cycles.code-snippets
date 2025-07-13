@@ -1,0 +1,25 @@
+{
+  "Permutation Group Cycles": {
+    "scope": "cpp",
+    "prefix": "permutation group cycle",
+    "body": [
+      "//cycle finding in even degree directed graph",
+      "int cnt = 0;",
+      "for (int i = 0; i < n; i++) {",
+      "\tif (adj[i].size() == 0)continue;",
+      "\tint j = i;",
+      "\tj = adj[i].back();",
+      "\tadj[i].pop_back();",
+      "\tint c = 1; // length of cycle",
+      "\twhile (j != i) {",
+      "\t\tint pj = j;",
+      "\t\tj = adj[j].back();",
+      "\t\tadj[pj].pop_back();",
+      "\t\tc++;",
+      "\t}",
+      "\tcnt += c;",
+      "}"
+    ],
+    "description": "Permutation Group Cycles"
+  }
+}

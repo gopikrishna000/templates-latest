@@ -1,0 +1,34 @@
+{
+  "DSU": {
+    "scope": "cpp",
+    "prefix": "dsu",
+    "body": [
+      "#define dsu(n) parent_dsu.resize(n);rank_dsu.assign(n,0);iota(parent_dsu.begin(),parent_dsu.end(),0)",
+      "vector<int> parent_dsu, rank_dsu;",
+      "void make_set_dsu(int v) {",
+      "\tparent_dsu[v] = v;  //initially all elements of parent_dsu = same value // so no need of make_set_dsu !!",
+      "\trank_dsu[v] = 0;     //initially all elemnts of rank = 0",
+      "}",
+      "",
+      "int find_set_dsu(int v) {",
+      "\tif (v == parent_dsu[v])",
+      "\t\treturn v;",
+      "\treturn parent_dsu[v] = find_set_dsu(parent_dsu[v]); //path compression",
+      "\t//O(logn) avg, but while building tree by doing union itself everything happens, and it becomes O(logn) after construction, for any call.",
+      "}",
+      "",
+      "void union_sets_dsu(int a, int b) {",
+      "\ta = find_set_dsu(a);",
+      "\tb = find_set_dsu(b);",
+      "\tif (a != b) {",
+      "\t\tif (rank_dsu[a] < rank_dsu[b])",
+      "\t\t\tswap(a, b);",
+      "\t\tparent_dsu[b] = a;",
+      "\t\tif (rank_dsu[a] == rank_dsu[b])",
+      "\t\t\trank_dsu[a]++;",
+      "\t}",
+      "}"
+    ],
+    "description": "DSU"
+  }
+}

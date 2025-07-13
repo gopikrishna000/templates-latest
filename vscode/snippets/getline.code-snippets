@@ -1,0 +1,10 @@
+{
+  "Getline": {
+    "scope": "cpp",
+    "prefix": "getline",
+    "body": [
+      "getline(cin>>ws,${0:s});"
+    ],
+    "description": "Getline"
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "Prefix": {
+    "scope": "cpp",
+    "prefix": "prefix",
+    "body": [
+      "//prefix suffix precomputation ,initalise size of pre,suf",
+      "auto calc = [&](auto & main, auto & p, auto & s) {",
+      "\tfor (int _ = 0; _ < 2; _++) {",
+      "\t\tint n = main.size();",
+      "\t\tvi &pre = (_ == 0) ? p : s;",
+      "\t\tfor (int i = 0; i < n; i++) {",
+      "\t\t\tpre[i] = (i == 0) ? main[i] : main[i] + pre[i - 1];",
+      "\t\t}",
+      "\t\treverse(all(main));",
+      "\t\treverse(all(suf));//and all suffix arrays",
+      "\t}",
+      "};"
+    ],
+    "description": "Prefix"
+  }
+}

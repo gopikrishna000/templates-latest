@@ -1,0 +1,12 @@
+{
+  "Lambda": {
+    "scope": "cpp",
+    "prefix": "lambda",
+    "body": [
+      "auto get = [&](auto a,auto b){",
+      "\t",
+      "};"
+    ],
+    "description": "Lambda"
+  }
+}

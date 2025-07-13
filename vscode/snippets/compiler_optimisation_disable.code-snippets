@@ -1,0 +1,10 @@
+{
+  "Disable Compile Optimisation": {
+    "scope": "cpp",
+    "prefix": "disable compile optimisation for",
+    "body": [
+      "#pragma GCC optimize (\"O0\")"
+    ],
+    "description": "Disable Compile Optimisation"
+  }
+}

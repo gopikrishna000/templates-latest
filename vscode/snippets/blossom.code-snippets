@@ -1,0 +1,34 @@
+{
+  "Blossom": {
+    "scope": "cpp",
+    "prefix": "blossom",
+    "body": [
+      "vector<int> component;",
+      "vector<int> vis;",
+      "void dfsb(int node, int component_number) {",
+      "\tcomponent[node] = component_number ;",
+      "\tvis[node] = true; ",
+      "\tfor (auto &x : adj[node]) {",
+      "\t\tif (!vis[x] && (bridge_set.find({node, x}) == bridge_set.end())) {",
+      "\t\t\tint next = x;",
+      "\t\t\tdfsb(next, component_number);",
+      "\t\t}",
+      "\t}",
+      "}",
+      "",
+      "void blossom(int n) {",
+      "\tvis.assign(n, 0);",
+      "\tcomponent.assign(n,0);",
+      "\tiota(all(component),0);",
+      "\t// int unique_component_number = 0;",
+      "\tfor (int i = 0; i < n; i++) {",
+      "\t\tif (!vis[i]) {",
+      "\t\t\tdfsb(i, i);",
+      "\t\t\t// unique_component_number++;",
+      "\t\t}",
+      "\t}",
+      "}"
+    ],
+    "description": "Blossom"
+  }
+}
